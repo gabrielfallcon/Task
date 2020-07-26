@@ -1,15 +1,14 @@
 export const isAuthenticated = () => {
-  const INITIAL_STATE = []
 
   const data = JSON.parse(localStorage.getItem('persist:root'));
-  const isValidAuth = JSON.parse(data.auth[1])
+  const isValid = JSON.parse(data.auth)
 
-  
-
-  if(isValidAuth != undefined) {
-    return false
-  }else {
-    return true
+  if(isValid === []) {
+    console.log('erro')
+    return false;
+  } else {
+    console.log(isValid)
+    return true;
   }
 
 }

@@ -1,10 +1,9 @@
-
 const INITIAL_STATE = []
 
-const register = (state = INITIAL_STATE, action) => {
+const auth = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'ADD_LOG':
 
+    case 'ADD_LOG':
       const emailUser = action.payload.email
       const senhaUser = action.payload.senha
 
@@ -16,16 +15,19 @@ const register = (state = INITIAL_STATE, action) => {
       const obj = isValid[0]
 
       if(obj !== undefined ) {
-        const {email, id} = obj
-        return state = [ email, id ]
+        const {email, id, nome} = obj
+        alert('registrado')
+        return state = [ email, id, nome ];
       }else {
-        console.log('nao passou :/')
+        alert('User nao registrado') 
+        return state = []
       }
-      return null
-  
+    
+    case 'REMOVE_SESSION':
+      return state = [];
     default:
       return state;
   }
 }
 
-export default register
+export default auth

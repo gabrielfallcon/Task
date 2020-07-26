@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { cpf } from 'cpf-cnpj-validator';
-import api from '../../services/api';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addRegister } from '../../store/actions/register';
@@ -25,7 +24,7 @@ const Register = () => {
     senha: ''
   }
 
-  const [form, setForm] = useState(INITIAL_STATE)
+  const [form, setForm] = useState(INITIAL_STATE);
 
   const dispatch = useDispatch();
 
@@ -40,9 +39,11 @@ const Register = () => {
 
     dispatch(addRegister(form));
 
-    setForm(INITIAL_STATE)
+    setForm(INITIAL_STATE);
 
-    history.push('/')
+    alert('usuário cadastrado com sucesso!')
+
+    history.push('/');
   }
 
   return(

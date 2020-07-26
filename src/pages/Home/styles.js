@@ -29,18 +29,18 @@ export const ContentNav = styled.div`
     font-weight: 400;
   }
 
-  a {
+  span {
     width: 100px;
     height: 37px;
     background-color: #46434C;
     color: #FFF;
     font-size: 16px;
     font-weight: bold;
-    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 40px;
+    cursor: pointer;
   }
 `;
 

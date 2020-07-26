@@ -3,6 +3,10 @@ export const authLogin = user => {
     type: 'ADD_LOG',
     payload: user,
   } 
-  
 }
 
+export const removeSession = () => {
+  return {
+    type: 'REMOVE_SESSION',
+  }
+}

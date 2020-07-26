@@ -23,7 +23,11 @@ const task = (state = INTIAL_STATE, action) => {
 
       const data = {...payload, ...dataDefault}
 
+      if(data == null) {
+        return console.log('erro')
+      }
       return state = [...state, data]
+    
     default:
       return state
   }

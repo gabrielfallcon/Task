@@ -26,6 +26,7 @@ function Login() {
 
     dispatch(authLogin(form));
 
+
     setForm({email: '', senha: '' });
 
     history.push('/home')
