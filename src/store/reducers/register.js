@@ -1,20 +1,15 @@
+import { uuid } from 'uuidv4'
+
 const INITIAL_STATE = [
-  {
-    cpf: '',
-    nome: '',
-    email: '',
-    dataNascimento: '',
-    cep: '',
-    endereco: '',
-    numero: '',
-    senha: '',
-  }
+  
 ]
 
 const register = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'ADD_REGISTER':
-      return [...state, action.register];
+      const { register } = action
+
+      return state = [...state, {...register, id: uuid()}];
     default:
       return state;
   }

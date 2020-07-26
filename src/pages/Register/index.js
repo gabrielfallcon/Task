@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { addRegister } from '../../store/actions/register'
+import React, { useState, useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
+import { cpf } from 'cpf-cnpj-validator';
+import api from '../../services/api';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { addRegister } from '../../store/actions/register';
+
+import Error from '../../components/Error';
 
 import { Container, Content } from './styles';
 
 const Register = () => {
+
+  const history = useHistory();
 
   const INITIAL_STATE = {
     cpf: '',
@@ -21,8 +29,9 @@ const Register = () => {
 
   const dispatch = useDispatch();
 
-
   const formChange = (e) => {
+    if(e.target.name == 'cpf') return setForm({ cpf: cpf.format(e.target.value) })
+    
     setForm({ ...form, [e.target.name]: e.target.value});
   }
 
@@ -32,9 +41,9 @@ const Register = () => {
     dispatch(addRegister(form));
 
     setForm(INITIAL_STATE)
+
+    history.push('/')
   }
-  
-  
 
   return(
     <Container>
@@ -51,12 +60,15 @@ const Register = () => {
             value={form.cpf}
           />
 
+          { !cpf.isValid(form.cpf) && form.cpf >= 11 ? <Error error="CPF inválido" /> : '' }
+
           <input 
             type="text" 
             name="nome"
             placeholder="Nome"
             value={form.nome}
             onChange={formChange}
+            required
           />
 
           <input 
@@ -65,14 +77,16 @@ const Register = () => {
             placeholder="E-mail"
             value={form.email}
             onChange={formChange}
+            required
           />
 
           <input 
-            type="text" 
+            type="date" 
             name="dataNascimento"
             placeholder="Data de Nascimento"
             value={form.dataNascimento}
             onChange={formChange}
+            required
           />
 
           <input 
@@ -82,6 +96,7 @@ const Register = () => {
             value={form.cep}
             onChange={formChange}
           />
+          
           <input 
             type="text" 
             name="endereco"
@@ -104,6 +119,7 @@ const Register = () => {
             placeholder="Senha"
             value={form.senha}
             onChange={formChange}
+            required
           />
 
           <button type="submit"> Register </button>

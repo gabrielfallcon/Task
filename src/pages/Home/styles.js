@@ -152,17 +152,45 @@ export const ListTask = styled.div`
     height: 50px;
     background-color: #E8E9ED;
     align-items: center;
-    justify-content: space-around;
+    justify-content: start;
     border-radius: 40px;
     padding-left: 80px;
+    position: relative;
 
     & + .tbody {
       margin-top: 10px;
     }
 
+    svg.concluir {
+      background-color: #0FA958;
+      border-radius: 50%;
+      position: absolute;
+      left: calc(0px + 20px);
+      cursor: pointer;
+    }
+
     li {
      width: 25%;
      font-size: 14px;
+    }
+    li.icons {
+      position: absolute;
+      right: calc(0px - 30px);
+
+      svg.zoom {
+        cursor: zoom-in;
+      }
+      svg.edit {
+        cursor: -webkit-grabbing;
+      }
+      svg.cancel {
+        cursor: pointer;
+      }
+      svg {
+        & + svg {
+          margin-left: 15px;
+        }
+      }
     }
   }
 `;

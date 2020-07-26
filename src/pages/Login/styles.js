@@ -38,17 +38,32 @@ export const Content = styled.div`
     margin-top: 40px;
     align-items: center;
 
-    input{
+    .input{
       width: 402px;
-      max-width: 100%;
-      height: 50px;
-      padding: 10px 15px; 
-      border: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      border: 2px solid #FFF;
       border-radius: 40px;
       background-color: #FFF;
+      margin-bottom: 20px;
+      flex-direction: row;
+      padding-left: 10px;
 
-      & + input {
-        margin-top: 36px;
+      &::focus {
+        border: 2px solid #0FA958;
+      }
+
+      input{
+        width: 80%;
+        height: 50px;
+        padding: 10px 15px; 
+        border: 0;
+        background-color: transparent;
+
+        & + input {
+          margin-top: 36px;
+        }
       }
     }
 
