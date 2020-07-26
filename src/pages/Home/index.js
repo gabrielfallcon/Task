@@ -105,7 +105,7 @@ const Home = () => {
         <ListTask>
           <h2>Tarefas</h2>
 
-          <ul class="thead">
+          <ul className="thead">
             <li>Nome</li>
             <li>Entrega</li>
             <li>Conclusão</li>

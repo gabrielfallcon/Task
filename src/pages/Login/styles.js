@@ -14,11 +14,11 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 762px;
+  width: 100%;
   max-width: 100%;
   height: 100%;
   max-height: 489px;
-  max-width: 1120px;
+  max-width: 762px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -40,6 +40,7 @@ export const Content = styled.div`
 
     .input{
       width: 402px;
+      max-width: 100%;
       height: 60px;
       display: flex;
       align-items: center;
@@ -49,10 +50,6 @@ export const Content = styled.div`
       margin-bottom: 20px;
       flex-direction: row;
       padding-left: 10px;
-
-      &::focus {
-        border: 2px solid #0FA958;
-      }
 
       input{
         width: 80%;
@@ -92,6 +89,21 @@ export const Content = styled.div`
       margin-top: 40px;
       text-decoration: none;
       color: #18A0FB;
+    }
+  }
+
+  @media(max-width: 768px) {
+    max-height: 100%;
+    border-radius: 0;
+
+    form {
+      width: 100%;
+
+      button {
+        width: 100%;
+        width: 320px;
+        height: 50px;
+      }
     }
   }
 `;

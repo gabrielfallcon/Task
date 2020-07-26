@@ -1,9 +1,11 @@
+import actionTypes from '../actionType';
+
 const INITIAL_STATE = []
 
 const auth = (state = INITIAL_STATE, action) => {
   switch (action.type) {
 
-    case 'ADD_LOG':
+    case actionTypes.ADD_LOG:
       const emailUser = action.payload.email
       const senhaUser = action.payload.senha
 
@@ -16,14 +18,13 @@ const auth = (state = INITIAL_STATE, action) => {
 
       if(obj !== undefined ) {
         const {email, id, nome} = obj
-        alert('registrado')
         return state = [ email, id, nome ];
       }else {
         alert('User nao registrado') 
         return state = []
       }
     
-    case 'REMOVE_SESSION':
+    case actionTypes.REMOVE_SESSION:
       return state = [];
     default:
       return state;

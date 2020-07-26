@@ -85,4 +85,25 @@ export const Content = styled.div`
       color: #18A0FB;
     }
   }
+
+  @media(max-width: 768px) {
+    max-height: 100%;
+    border-radius: 0;
+    
+    h2 {
+      font-size: 38px;
+    }
+
+    form {
+      input {
+        height: 50px;
+        font-size: 15px;
+      }
+      button {
+        width: 80%;
+        height: 50px;
+        font-size: 18px;
+      }
+    }
+  }
 `;

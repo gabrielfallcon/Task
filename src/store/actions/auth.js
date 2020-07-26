@@ -1,12 +1,14 @@
+import actionType from '../actionType';
+
 export const authLogin = user => {
   return {
-    type: 'ADD_LOG',
+    type: actionType.ADD_LOG,
     payload: user,
   } 
 }
 
 export const removeSession = () => {
   return {
-    type: 'REMOVE_SESSION',
+    type: actionType.REMOVE_SESSION,
   }
 }

@@ -42,6 +42,19 @@ export const ContentNav = styled.div`
     border-radius: 40px;
     cursor: pointer;
   }
+
+  @media(max-width: 768px) {
+    h1 {
+      font-size: 18px;
+      margin-left: 10px;
+    }
+    span {
+      width: 45px;
+      height: 43px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+  }
 `;
 
 export const Content = styled.div`
@@ -49,9 +62,14 @@ export const Content = styled.div`
   max-width: 1120px;
   height: 100%;
   margin: 0 auto;
-  padding: 35px 25px;
+  padding: 35px 20px;
   display: flex;
   justify-content: space-between;
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+    padding: 35px 5px;
+  }
 `;
 
 export const RegisterTask = styled.div`
@@ -75,7 +93,6 @@ export const RegisterTask = styled.div`
 
     input{
       width: 100%;
-      max-width: 100%;
       height: 40px;
       padding: 10px 15px; 
       border: 0;
@@ -112,6 +129,27 @@ export const RegisterTask = styled.div`
       &:hover{
         background-color: #FFF;
         color: #0FA958;
+      }
+    }
+  }
+
+  @media(max-width: 768px) {
+    h2 {
+      font-size: 32px;
+      margin-left: 10px;
+    }
+    form {
+      max-width: 100%;
+
+      input {
+        height: 50px;
+        font-size: 15px;
+      }
+      button {
+        align-self: center;
+        width: 80%;
+        height: 50px;
+        font-size: 20px;
       }
     }
   }
@@ -189,6 +227,30 @@ export const ListTask = styled.div`
       svg {
         & + svg {
           margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  @media(max-width: 768px) {
+    padding: 0 5px;
+
+    h2 {
+      margin: 25px 0;
+      font-size: 33px;
+    }
+    .thead{
+      padding-left: 0px;
+    }
+    .tbody {
+      padding: 0 10px;
+      svg.concluir {
+        display: none;
+      }
+
+      li.icons {
+        .zoom, .edit {
+          display: none;
         }
       }
     }
